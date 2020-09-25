@@ -121,7 +121,7 @@
                         </tr>
                        
                       </table>
-
+                </form>
 
                     <!-- <div class="service">
                         <div class="form-item">
@@ -136,9 +136,9 @@
                     <h3>请求参数</h2>
                     <div class="body">
                         <textarea name="body" rows="10"></textarea>
-                    </div>
-                </form>
-                <h2>响应</h2> -->
+                    </div>-->
+                
+                <!-- <h2>响应</h2>  -->
 
             </div>
 
@@ -164,10 +164,15 @@
             e.preventDefault();
             var form = document.getElementById('JSrpc');
             var formData = new FormData(form);
-            var data = JSON.stringify({
-                url: formData.get('url'),
-                param: formData.get('body')
-            });
+            // var data = JSON.stringify({
+            //     url: formData.get('url'),
+            //     service: formData.get('service'),
+            //     method: formData.get('method'),
+            //     description: formData.get('descriptionurl'),
+            //     param: formData.get('body')
+            // });\
+            var data = formData; 
+            // console.log(formData.getAll());
             Ajax.post('/send', data, (res) => {
                 console.log(res);
             });

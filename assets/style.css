@@ -360,11 +360,7 @@ h5{
     font-weight: 1000;
     color: rgb(82, 82, 82);
 } 
-.request .url{
-    /* width: 900px; */
-    /* height: 40px; */
-    /* background-color: rgb(236, 236, 236); */
-}
+
 .request .url {
     display: flex;
     /* justify-content: space-evenly; */
