@@ -44,12 +44,12 @@
                 <input type="text" class="search" value="Filter">
             </div>
             <!--  -->
-            <ul class="tab-list">
+            <ul class="tab-list" id="tablist">
                 <li class="current"><span>History</span></li>
                 <li ><span>Collections</span></li>
                 <li ><span>APls</span></li>
             </ul>
-            <div class="tab-con">
+            <div class="tab-con" id='tabcon'>
                 <div class="item" style="display: block;" >
                     <div class="item-top-top1">
                         <p></p>
@@ -76,8 +76,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="main-rigth">
             <div class="main-rigth-top"></div>
@@ -108,10 +106,10 @@
 
                     <table class="service"  cellspacing=0 cellpadding='5px'  >
                         <tr class="tr">
-                          <th width="45px"></th>
-                          <th width="400px">KEY</th>
-                          <th width="400px">VALUE</th>
-                          <th width="400px">DESCRIPTION</th>
+                          <th></th>
+                          <th >KEY</th>
+                          <th>VALUE</th>
+                          <th >DESCRIPTION</th>
                         </tr>
                         <tr >
                           <td></td>
@@ -155,7 +153,7 @@
 
     <div class="response"></div>
 
-
+    <!-- <div class="foot"></div> -->
 
     <script src="../assets/ajax.js"></script>
     <script>
@@ -164,13 +162,13 @@
             e.preventDefault();
             var form = document.getElementById('JSrpc');
             var formData = new FormData(form);
-            // var data = JSON.stringify({
-            //     url: formData.get('url'),
-            //     service: formData.get('service'),
-            //     method: formData.get('method'),
-            //     description: formData.get('descriptionurl'),
-            //     param: formData.get('body')
-            // });\
+            var data = JSON.stringify({
+                url: formData.get('url'),
+                service: formData.get('service'),
+                method: formData.get('method'),
+                description: formData.get('descriptionurl'),
+                param: formData.get('body')
+            });
             var data = formData; 
             // console.log(formData.getAll());
             Ajax.post('/send', data, (res) => {
